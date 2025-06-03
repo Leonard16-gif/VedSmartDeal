@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #2e7d32; /* Changed to green */
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .language-select {
+      background: white;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+    .product {
+      display: flex;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .product img {
+      width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 20px;
+      flex: 1;
+    }
+    .product-info h2 {
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    .product-info p {
+      margin-bottom: 8px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      margin: 5px 10px 0 0;
+      padding: 8px 12px;
+      background: #10b981;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .contact-buttons a.email {
+      background: #3b82f6;
+    }
+    section {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .search-bar {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .search-bar input[type="text"] {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .search-bar button {
+      padding: 6px 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+    .search-bar button:hover {
+      background-color: #1b5e20;
+    }
+    @media (max-width: 768px) {
+      .product {
+        flex-direction: column;
+      }
+      .product img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" data-en="Mini Market" data-kin="Isoko Rito" data-fr="Mini Marché">Mini Market</div>
+    <nav>
+      <a href="#home" data-en="Home" data-kin="Ahabanza" data-fr="Accueil">Home</a>
+      <a href="#about" data-en="About" data-kin="Ibyerekeye" data-fr="À propos">About</a>
+      <a href="#contact" data-en="Contact" data-kin="Twandikire" data-fr="Contact">Contact</a>
+    </nav>
+    <select class="language-select" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="kin">Kinyarwanda</option>
+      <option value="fr">Français</option>
+    </select>
+  </header>
+
+  <div class="container" id="home">
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+
+    <h1 data-en="Products Available" data-kin="Ibicuruzwa Bihari" data-fr="Produits Disponibles">Products Available</h1>
+
+    <div class="product">
+      <img src="image/myshoe.png/300x200" alt="Product">
+      <div class="product-info">
+        <h2 data-en="High Quality Shoes" data-kin="Inkweto Nziza" data-fr="Chaussures de Qualité">High Quality Shoes</h2>
+        <p data-en="Comfortable and stylish shoes for all occasions." data-kin="Inkweto nziza kandi zoroshye ku birori byose." data-fr="Chaussures confortables et élégantes pour toutes les occasions.">Comfortable and stylish shoes for all occasions.</p>
+        <p><strong data-en="Price:" data-kin="Igiciro:" data-fr="Prix:">Price:</strong> 15,000RWF</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/250780904158">WhatsApp</a>
+          <a href="mailto:umucunguzileonard@gmail.com" class="email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="image/myshoe.png" alt="Product">
+      <div class="product-info">
+        <h2 data-en="Smartphone" data-kin="Telefoni" data-fr="Téléphone">Smartphone</h2>
+        <p data-en="Latest model with high resolution camera." data-kin="Modeli nshya ifite camera ikomeye." data-fr="Dernier modèle avec une caméra haute résolution.">Latest model with high resolution camera.</p>
+        <p><strong data-en="Price:" data-kin="Igiciro:" data-fr="Prix:">Price:</strong> 150,000 RWF</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/250780904158">WhatsApp</a>
+          <a href="umucunguzileonard@gmail.com" class="email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2 data-en="About Us" data-kin="Ibyerekeye" data-fr="À propos">About Us</h2>
+      <p data-en="We provide affordable and reliable products for everyone." data-kin="Dutanga ibicuruzwa byiza kandi bihendutse ku bantu bose." data-fr="Nous proposons des produits abordables et fiables pour tous.">We provide affordable and reliable products for everyone.</p>
+    </section>
+
+    <section id="contact">
+      <h2 data-en="Contact Us" data-kin="Twandikire" data-fr="Contactez-nous">Contact Us</h2>
+      <p data-en="Reach us on WhatsApp or email for more information." data-kin="Twandikire kuri WhatsApp cyangwa Email kugirango ubone ibisobanuro birenze." data-fr="Contactez-nous sur WhatsApp ou par email pour plus d'informations.">Reach us on WhatsApp or email for more information.</p>
+    </section>
+  </div>
+
+  <script>
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
+</html>
